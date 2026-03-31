@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: pawwatch-signaling
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PAWWATCH_API_KEY
+        generateValue: true          # Render auto-generates a secret
+      - key: ALLOWED_ORIGIN
+        value: https://your-frontend.vercel.app   # Update after Vercel deploy
+      - key: TURN_URL
+        value: ""                    # Optional: add a TURN server URL
+      - key: TURN_USERNAME
+        value: ""
+      - key: TURN_CREDENTIAL
+        value: ""
+    healthCheckPath: /health
