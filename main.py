@@ -1,9 +1,3 @@
-"""
-PawWatch — WebRTC Signaling Server
-FastAPI + WebSocket-based signaling for WebRTC peer connections.
-Deploy to Render (free tier) using render.yaml.
-"""
-
 import asyncio
 import json
 import logging
@@ -26,7 +20,7 @@ log = logging.getLogger("pawwatch")
 
 # ── Config ─────────────────────────────────────────────────
 API_KEY        = os.environ.get("PAWWATCH_API_KEY", "change-me-in-production")
-ALLOWED_ORIGIN = os.environ.get("ALLOWED_ORIGIN", "*")          # set your Vercel URL in prod
+ALLOWED_ORIGIN = os.environ.get("ALLOWED_ORIGIN", "https://pawwatch-zeta.vercel.app")          # set your Vercel URL in prod
 TURN_URL       = os.environ.get("TURN_URL", "")
 TURN_USERNAME  = os.environ.get("TURN_USERNAME", "")
 TURN_CREDENTIAL= os.environ.get("TURN_CREDENTIAL", "")
