@@ -9,7 +9,7 @@ services:
       - key: PAWWATCH_API_KEY
         generateValue: true          # Render auto-generates a secret
       - key: ALLOWED_ORIGIN
-        value: https://your-frontend.vercel.app   # Update after Vercel deploy
+        value: https://pawwatch-zeta.vercel.app   # Update after Vercel deploy
       - key: TURN_URL
         value: ""                    # Optional: add a TURN server URL
       - key: TURN_USERNAME
